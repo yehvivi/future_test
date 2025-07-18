@@ -1,0 +1,42 @@
+
+body {
+  font-family: sans-serif;
+  background-color: #fff;
+  color: #111;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.question {
+  margin-bottom: 2rem;
+}
+
+.options {
+  list-style-type: none;
+  padding: 0;
+}
+
+.options li {
+  margin-bottom: 0.5rem;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.progress {
+  margin-bottom: 1rem;
+}
