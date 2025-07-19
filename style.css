@@ -1,11 +1,10 @@
 body {
-  font-family: sans-serif;
+  font-family: 'Orbitron', 'IBM Plex Sans TC', sans-serif;
   background-color: #fff;
   color: #111;
   margin: 0;
   padding: 0;
 }
-
 #app {
   max-width: 800px;
   margin: 3rem auto;
@@ -13,22 +12,16 @@ body {
   border: 1px solid #ccc;
   background-color: #f9f9f9;
 }
-
-/* 問題區塊 */
 .question {
   margin-bottom: 2rem;
 }
-
 .options {
   list-style-type: none;
   padding: 0;
 }
-
 .options li {
   margin-bottom: 0.5rem;
 }
-
-/* 按鈕樣式 */
 button {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
@@ -38,17 +31,12 @@ button {
   cursor: pointer;
   border-radius: 4px;
 }
-
 button:hover {
   background-color: #333;
 }
-
-/* 進度條 */
 .progress {
   margin-bottom: 1rem;
 }
-
-/* 結果報告區塊 */
 .report {
   max-width: 800px;
   margin: 2rem auto;
@@ -56,12 +44,10 @@ button:hover {
   background-color: #fff;
   border: 1px solid #ccc;
 }
-
 .report h2, .report h3 {
   margin-top: 1.5rem;
   font-weight: bold;
 }
-
 .report .advice {
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
@@ -71,8 +57,6 @@ button:hover {
   color: #333;
   line-height: 1.6;
 }
-
-/* Intro 首頁樣式 */
 .intro {
   max-width: 800px;
   margin: 3rem auto;
@@ -83,39 +67,32 @@ button:hover {
   line-height: 1.8;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
-
 .intro img {
   width: 120px;
   display: block;
   margin: 0 auto 1.5rem;
 }
-
 .intro h1 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
 }
-
 .intro h3 {
   color: #555;
   margin-bottom: 1rem;
   font-size: 1.1rem;
 }
-
 .intro h4 {
   margin-top: 1.5rem;
   font-size: 1.2rem;
   color: #333;
 }
-
 .intro ul, .intro ol {
   padding-left: 1.5rem;
   margin-top: 0.5rem;
 }
-
 .intro li {
   margin-bottom: 0.4rem;
 }
-
 .intro button {
   display: inline-block;
   margin-top: 1.5rem;
@@ -126,7 +103,6 @@ button:hover {
   border-radius: 4px;
   cursor: pointer;
 }
-
 .intro button:hover {
   background-color: #333;
 }
