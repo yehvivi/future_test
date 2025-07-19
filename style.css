@@ -1,18 +1,11 @@
-/* 全站字體設定 */
 body {
-  font-family: 'IBM Plex Sans TC', sans-serif;
+  font-family: sans-serif;
   background-color: #fff;
   color: #111;
   margin: 0;
   padding: 0;
 }
 
-/* 強調英文／數字樣式（標題、進度等）使用 Orbitron */
-h1, h2, h3, .number, .progress {
-  font-family: 'Orbitron', 'IBM Plex Sans TC', sans-serif;
-}
-
-/* 主容器樣式 */
 #app {
   max-width: 800px;
   margin: 3rem auto;
@@ -44,7 +37,6 @@ button {
   border: none;
   cursor: pointer;
   border-radius: 4px;
-  font-family: 'Orbitron', sans-serif;
 }
 
 button:hover {
@@ -65,8 +57,7 @@ button:hover {
   border: 1px solid #ccc;
 }
 
-.report h2,
-.report h3 {
+.report h2, .report h3 {
   margin-top: 1.5rem;
   font-weight: bold;
 }
@@ -112,32 +103,3 @@ button:hover {
 
 .intro h4 {
   margin-top: 1.5rem;
-  font-size: 1.2rem;
-  color: #333;
-}
-
-.intro ul,
-.intro ol {
-  padding-left: 1.5rem;
-  margin-top: 0.5rem;
-}
-
-.intro li {
-  margin-bottom: 0.4rem;
-}
-
-.intro button {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.6rem 1.2rem;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: 'Orbitron', sans-serif;
-}
-
-.intro button:hover {
-  background-color: #333;
-}
