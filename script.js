@@ -85,7 +85,7 @@ function renderResult() {
     const avg = total / scores.length;
 
     const p = document.createElement("p");
-    p.innerHTML = `<strong>${cat}</strong>：總分 ${total} ／ 平均 ${avg.toFixed(2)}`;
+    p.innerHTML = `<strong>${cat}</strong>：總分 ${total} `;
     app.appendChild(p);
 
     const advice = document.createElement("div");
