@@ -76,11 +76,18 @@ button:hover {
 .intro {
   max-width: 800px;
   margin: 3rem auto;
-  padding: 2rem 2.5rem;
-  background-color: #f3f3f3;
+  padding: 2.5rem;
+  background: linear-gradient(to bottom right, #f3f3f3, #eaeaea);
   border: 1px solid #ccc;
   border-radius: 10px;
   line-height: 1.8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.intro img {
+  width: 120px;
+  display: block;
+  margin: 0 auto 1.5rem;
 }
 
 .intro h1 {
