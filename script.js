@@ -86,10 +86,10 @@ function renderResult() {
     if (total >= 65) riskLabel = "🟢 高穩定，風險等級：低";
     else if (total >= 45) riskLabel = "🟡 中等，風險等級：中";
     else riskLabel = "🔴 高風險，風險等級：高";
-
-const p = document.createElement("p");
-p.innerHTML = `<strong>${cat}</strong>：總分 ${total} ${riskLabel}`;
-app.appendChild(p);
+    
+    const p = document.createElement("p");
+    p.innerHTML = `<strong>${cat}</strong>：總分 ${total} ${riskLabel}`;
+    app.appendChild(p);
 
     const advice = document.createElement("div");
     advice.className = "advice";
