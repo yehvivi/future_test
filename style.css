@@ -1,10 +1,10 @@
-/* Intro 首頁樣式（已改為黑色邊框） */
+/* Intro 首頁樣式（原始灰色邊框版本） */
 .intro {
   max-width: 800px;
   margin: 3rem auto;
   padding: 2.5rem;
   background: linear-gradient(to bottom right, #f3f3f3, #eaeaea);
-  border: 1px solid #000; /* ← 這裡是黑色邊框 */
+  border: 1px solid #ccc; /* ← 回復為灰色 */
   border-radius: 10px;
   line-height: 1.8;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
