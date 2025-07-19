@@ -83,9 +83,9 @@ function renderResult() {
   Object.entries(categories).forEach(([cat, scores]) => {
     const total = scores.reduce((a, b) => a + b, 0);
     let riskLabel = "";
-if (total >= 65) riskLabel = "🟢 高穩定";
-else if (total >= 45) riskLabel = "🟡 中等";
-else riskLabel = "🔴 高風險";
+    if (total >= 65) riskLabel = "🟢 高穩定，風險等級：低";
+    else if (total >= 45) riskLabel = "🟡 中等，風險等級：中";
+    else riskLabel = "🔴 高風險，風險等級：高";
 
 const p = document.createElement("p");
 p.innerHTML = `<strong>${cat}</strong>：總分 ${total} ${riskLabel}`;
