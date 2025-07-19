@@ -3,6 +3,45 @@ let currentPage = 0;
 const questionsPerPage = 20;
 let answers = [];
 
+function renderIntro() {
+  const app = document.getElementById("app");
+  app.innerHTML = `
+    <div class="intro">
+      <h1>🧬 原木載體心理適配檢測說明書</h1>
+      <h3>夢航公司｜意識接入前風險評估模組官方文件</h3>
+      <hr class="my-4">
+
+      <h4>📍簡介</h4>
+      <p>作為夢航公司 RootHost™（原木載體）方案的前置審查流程，本檢測系統由 EULYSIA™ 人格整合模組與 CPEU（Cognitive Pattern Extraction Unit）共同開發，目的在於：</p>
+      <ul>
+        <li>測定申請者意識結構的穩定性；</li>
+        <li>評估其作為「未來人載體」的風險係數；</li>
+        <li>確保不產生神經異常、倫理偏移或身份解離。</li>
+      </ul>
+      <p>此測驗不僅關係到個人風險，也關乎時空節點穩定度與倫理協定的執行。</p>
+
+      <h4>📐測驗結構與核心指標</h4>
+      <p>本測驗共計 <strong>100 題</strong>，分為 <strong>五大核心模組</strong>，每模組 20 題，涵蓋如下指標：</p>
+      <ol>
+        <li><strong>心理穩定性：</strong> 測量情緒調節與錯亂風險。</li>
+        <li><strong>記憶與意識邊界感：</strong> 評估記憶清晰度與自我辨識。</li>
+        <li><strong>道德彈性與自我認同：</strong> 檢測角色扮演下的倫理感與身份穩定。</li>
+        <li><strong>壓力適應力與情緒彈性：</strong> 測量極端刺激下的心理反應彈性。</li>
+        <li><strong>身份邊界與意識界線穩定度：</strong> 測定自我認知與多重意識下的核心穩定度。</li>
+      </ol>
+
+      <p style="margin-top: 1.5rem;"><strong>準備好開始測驗了嗎？</strong></p>
+      <button id="startBtn">開始測驗</button>
+    </div>
+  `;
+
+  // 綁定按鈕進入測驗
+  document.getElementById("startBtn").onclick = () => {
+    currentPage = 0;
+   renderPage();
+  };
+}
+
 function renderPage() {
   const app = document.getElementById("app");
   app.innerHTML = "";
@@ -180,4 +219,4 @@ function renderResult() {
 
 
 // 初始顯示
-renderPage();
+renderIntro();
