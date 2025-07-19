@@ -82,11 +82,14 @@ function renderResult() {
   // 顯示每一類的分數與文字建議
   Object.entries(categories).forEach(([cat, scores]) => {
     const total = scores.reduce((a, b) => a + b, 0);
-    const avg = total / scores.length;
+    let riskLabel = "";
+if (total >= 65) riskLabel = "🟢 高穩定";
+else if (total >= 45) riskLabel = "🟡 中等";
+else riskLabel = "🔴 高風險";
 
-    const p = document.createElement("p");
-    p.innerHTML = `<strong>${cat}</strong>：總分 ${total} `;
-    app.appendChild(p);
+const p = document.createElement("p");
+p.innerHTML = `<strong>${cat}</strong>：總分 ${total} ${riskLabel}`;
+app.appendChild(p);
 
     const advice = document.createElement("div");
     advice.className = "advice";
