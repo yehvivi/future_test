@@ -68,7 +68,7 @@ function recordAnswer(qNum, score) {
 
 function renderResult() {
   const app = document.getElementById("app");
-  app.innerHTML = "<h2>測驗結果</h2>";
+  app.innerHTML = "";
 
   const categories = {};
   questions.forEach(q => {
@@ -79,23 +79,32 @@ function renderResult() {
     if (ans) categories[q.category].push(ans.score);
   });
 
-  // 顯示每一類的分數與文字建議
+  const report = document.createElement("div");
+  report.className = "report";
+  report.innerHTML = `<h2>原木載體心理適配報告</h2>`;
+
+  // ▶ 各分類得分與風險分析
+  let highCount = 0;
+  let midCount = 0;
+  let lowCount = 0;
+
   Object.entries(categories).forEach(([cat, scores]) => {
     const total = scores.reduce((a, b) => a + b, 0);
     let riskLabel = "";
-    if (total >= 65) riskLabel = "｜高穩定，風險等級：低";
-    else if (total >= 45) riskLabel = "｜中等，風險等級：中";
-    else riskLabel = "｜高風險，風險等級：高";
-    
-    const p = document.createElement("p");
-    p.innerHTML = `<strong>${cat}</strong>：總分 ${total} ${riskLabel}`;
-    app.appendChild(p);
-
-    const advice = document.createElement("div");
-    advice.className = "advice";
-
     let text = "";
 
+    if (total >= 65) {
+      riskLabel = "（風險等級：低）";
+      lowCount++;
+    } else if (total >= 45) {
+      riskLabel = "（風險等級：中）";
+      midCount++;
+    } else {
+      riskLabel = "（風險等級：高）";
+      highCount++;
+    }
+
+    // 對應建議
     if (cat === "心理穩定性") {
       if (total >= 65) text = "您具備高抗壓與精神穩定性，適合進入高互動節點。";
       else if (total >= 45) text = "整體心理穩定性尚可，建議限制旅程時長並搭配情緒緩衝模組。";
@@ -126,20 +135,49 @@ function renderResult() {
       else text = "身份解離風險高，請暫緩作為載體，並接受深層回歸訓練。";
     }
 
-    advice.textContent = text;
-    app.appendChild(advice);
+    report.innerHTML += `
+      <h3>${cat}：總分 ${total} ${riskLabel}</h3>
+      <p class="advice">${text}</p>
+    `;
   });
 
-  // 補上一段整體說明 footer
-  const footer = document.createElement("div");
-  footer.className = "mt-8 text-sm text-gray-500";
-  footer.innerHTML = `
+  // ▶ 總體評估與建議
+  let overallLabel = "";
+  let suggestion = "";
+
+  if (highCount >= 3) {
+    overallLabel = "高";
+    suggestion = "⚠ 風險過高，建議暫緩作為原木載體，須進行深層意識穩定訓練。";
+  } else if (highCount >= 2 || midCount >= 3) {
+    overallLabel = "中";
+    suggestion = "可執行短時原木載體任務，需限制角色複雜度並搭配情緒監控模組。";
+  } else {
+    overallLabel = "低";
+    suggestion = "可安全接入原木載體任務，可參與中至高互動節點模擬。";
+  }
+
+  report.innerHTML += `
     <hr class="my-4">
-    <p>本測驗結果僅作為原木載體適配之初步評估，實際接入需通過 EULYSIA™ 系統之完整人格映射與旅程模擬。</p>
-    <p class="mt-2">夢航公司將以最高標準確保所有時空旅客與當地節點意識結構之倫理安全。</p>
+    <h2>整體總評</h2>
+    <p>風險等級：<strong>${overallLabel}</strong></p>
+    <p>${suggestion}</p>
   `;
-  app.appendChild(footer);
+
+  // ▶ 夢航公司補述說明（約 500 字）
+  report.innerHTML += `
+    <hr class="my-4">
+    <p style="line-height:1.8;">
+      本報告由夢航公司意識對映模組 EULYSIA™ 協同生成，根據您的心理答題結果進行多維度風險評估與適配推算。本評估不僅反映您目前的情緒韌性與人格結構，也揭示了您在「作為未來人載體」時可能面臨的身心挑戰。
+      <br><br>
+      時空旅行雖為 2201 年的重要文明活動之一，但作為原木載體的人類，仍需承擔由他者意識進入體內所產生的壓力與重組風險。我們深知，每一個人的神經網絡皆獨特而脆弱，因此在開放身體共享之前，必須進行嚴格的心理安全審查。您的本次表現為旅程設計與節點選擇提供了具體依據，未來也將由 EULYSIA 根據此次評估結果擬定推薦訓練模組或安全上限規格。
+      <br><br>
+      若您對旅程仍有任何猶豫，我們建議您重新檢視您的自我定位與風險承受意願，並可預約進階模擬倉試行一次「同步旅程預演」。
+    </p>
+  `;
+
+  app.appendChild(report);
 }
+
 
 // 初始顯示
 renderPage();
