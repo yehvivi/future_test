@@ -21,14 +21,14 @@ function renderIntro() {
       <p>此測驗不僅關係到個人風險，也關乎時空節點穩定度與倫理協定的執行。</p>
 
       <h4>📐測驗結構與核心指標</h4>
-      <p>本測驗共計 <strong>100 題</strong>，分為 <strong>五大核心模組</strong>，每模組 20 題，涵蓋如下指標：</p>
-      <ol>
-        <li><strong>心理穩定性：</strong> 測量情緒調節與錯亂風險。</li>
-        <li><strong>記憶與意識邊界感：</strong> 評估記憶清晰度與自我辨識。</li>
-        <li><strong>道德彈性與自我認同：</strong> 檢測角色扮演下的倫理感與身份穩定。</li>
-        <li><strong>壓力適應力與情緒彈性：</strong> 測量極端刺激下的心理反應彈性。</li>
-        <li><strong>身份邊界與意識界線穩定度：</strong> 測定自我認知與多重意識下的核心穩定度。</li>
-      </ol>
+     <p>本測驗共計 <strong>64 題</strong>，分為 五大核心模組，涵蓋如下指標：</p>
+     <ol>
+  <li><strong>心理穩定性：</strong> 測量情緒調節與錯亂風險。</li>
+  <li><strong>記憶與意識邊界感：</strong> 評估記憶清晰度與自我辨識。</li>
+  <li><strong>道德彈性與自我認同：</strong> 檢測角色扮演下的倫理感與身份穩定。</li>
+  <li><strong>壓力適應力與情緒彈性：</strong> 測量極端刺激下的心理反應彈性。</li>
+  <li><strong>身份邊界與意識界線穩定度：</strong> 測定自我認知與多重意識下的核心穩定度。</li>
+</ol>
 
       <p style="margin-top: 1.5rem;"><strong>準備好開始測驗了嗎？</strong></p>
       <button id="startBtn">開始測驗</button>
