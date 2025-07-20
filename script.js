@@ -105,6 +105,7 @@ function renderPage() {
     }
   };
   app.appendChild(nextBtn);
+  window.scrollTo(0, 0);  // 每頁切換後自動滾動到頂部
 }
 
 function recordAnswer(qNum, score) {
@@ -349,6 +350,7 @@ function renderPage() {
     }
   };
   app.appendChild(nextBtn);
+  window.scrollTo(0, 0);  // 每頁切換後自動滾動到頂部
 }
 
 function recordAnswer(qNum, score) {
