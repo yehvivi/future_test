@@ -514,7 +514,7 @@ const questions = [
     category: "壓力適應力與情緒彈性",
     text: `⼀個⼈說：「你越痛苦，代表越接近真理。」你會︖`,
     options: [
-      { text: `覺得這是虐待⾃⼰的藉⼜`, score: 1 },
+      { text: `覺得這是虐待⾃⼰的藉口`, score: 1 },
       { text: `反問對⽅什麼是真理`, score: 3 },
       { text: `⼀半相信⼀半懷疑`, score: 2 },
       { text: `默默記下這句話`, score: 4 }
