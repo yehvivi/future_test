@@ -1,7 +1,17 @@
 
 let currentPage = 0;
-const questionsPerPage = 20;
 let answers = [];
+
+// 先按分類分組題目
+const groupedQuestions = {};
+questions.forEach(q => {
+  if (!groupedQuestions[q.category]) {
+    groupedQuestions[q.category] = [];
+  }
+  groupedQuestions[q.category].push(q);
+});
+const categories = Object.keys(groupedQuestions);
+const totalPages = categories.length;
 
 function renderIntro() {
   const app = document.getElementById("app");
@@ -21,24 +31,23 @@ function renderIntro() {
       <p>此測驗不僅關係到個人風險，也關乎時空節點穩定度與倫理協定的執行。</p>
 
       <h4>📐測驗結構與核心指標</h4>
-     <p>本測驗共計 <strong>64 題</strong>，分為 五大核心模組，涵蓋如下指標：</p>
-     <ol>
-  <li><strong>心理穩定性：</strong> 測量情緒調節與錯亂風險。</li>
-  <li><strong>記憶與意識邊界感：</strong> 評估記憶清晰度與自我辨識。</li>
-  <li><strong>道德彈性與自我認同：</strong> 檢測角色扮演下的倫理感與身份穩定。</li>
-  <li><strong>壓力適應力與情緒彈性：</strong> 測量極端刺激下的心理反應彈性。</li>
-  <li><strong>身份邊界與意識界線穩定度：</strong> 測定自我認知與多重意識下的核心穩定度。</li>
-</ol>
+      <p>本測驗共計 <strong>64 題</strong>，分為 五大核心模組，涵蓋如下指標：</p>
+      <ol>
+        <li><strong>心理穩定性：</strong> 測量情緒調節與錯亂風險。</li>
+        <li><strong>記憶與意識邊界感：</strong> 評估記憶清晰度與自我辨識。</li>
+        <li><strong>道德彈性與自我認同：</strong> 檢測角色扮演下的倫理感與身份穩定。</li>
+        <li><strong>壓力適應力與情緒彈性：</strong> 測量極端刺激下的心理反應彈性。</li>
+        <li><strong>身份邊界與意識界線穩定度：</strong> 測定自我認知與多重意識下的核心穩定度。</li>
+      </ol>
 
       <p style="margin-top: 1.5rem;"><strong>準備好開始測驗了嗎？</strong></p>
       <button id="startBtn">開始測驗</button>
     </div>
   `;
 
-  // 綁定按鈕進入測驗
   document.getElementById("startBtn").onclick = () => {
     currentPage = 0;
-   renderPage();
+    renderPage();
   };
 }
 
@@ -46,15 +55,17 @@ function renderPage() {
   const app = document.getElementById("app");
   app.innerHTML = "";
 
-  const pageQuestions = questions.slice(
-    currentPage * questionsPerPage,
-    (currentPage + 1) * questionsPerPage
-  );
+  const category = categories[currentPage];
+  const pageQuestions = groupedQuestions[category];
 
   const progress = document.createElement("div");
   progress.className = "progress";
-  progress.textContent = `目前進度：${currentPage + 1} / ${questions.length / questionsPerPage}`;
+  progress.textContent = `目前進度：${currentPage + 1} / ${totalPages}`;
   app.appendChild(progress);
+
+  const title = document.createElement("h3");
+  title.textContent = `模組：${category}`;
+  app.appendChild(title);
 
   pageQuestions.forEach((q, index) => {
     const qDiv = document.createElement("div");
@@ -84,9 +95,9 @@ function renderPage() {
   });
 
   const nextBtn = document.createElement("button");
-  nextBtn.textContent = currentPage < questions.length / questionsPerPage - 1 ? "下一頁" : "送出結果";
+  nextBtn.textContent = currentPage < totalPages - 1 ? "下一頁" : "送出結果";
   nextBtn.onclick = () => {
-    if (currentPage < questions.length / questionsPerPage - 1) {
+    if (currentPage < totalPages - 1) {
       currentPage++;
       renderPage();
     } else {
@@ -105,6 +116,11 @@ function recordAnswer(qNum, score) {
   }
 }
 
+// 原本 renderResult 可沿用（未更動分類名稱格式）
+
+renderIntro();
+
+
 function renderResult() {
   const app = document.getElementById("app");
   app.innerHTML = "";
@@ -122,7 +138,6 @@ function renderResult() {
   report.className = "report";
   report.innerHTML = `<h2>原木載體心理適配報告</h2>`;
 
-  // ▶ 各分類得分與風險分析
   let highCount = 0;
   let midCount = 0;
   let lowCount = 0;
@@ -143,7 +158,6 @@ function renderResult() {
       highCount++;
     }
 
-    // 對應建議
     if (cat === "心理穩定性") {
       if (total >= 65) text = "您具備高抗壓與精神穩定性，適合進入高互動節點。";
       else if (total >= 45) text = "整體心理穩定性尚可，建議限制旅程時長並搭配情緒緩衝模組。";
@@ -180,7 +194,6 @@ function renderResult() {
     `;
   });
 
-  // ▶ 總體評估與建議
   let overallLabel = "";
   let suggestion = "";
 
@@ -202,7 +215,6 @@ function renderResult() {
     <p>${suggestion}</p>
   `;
 
-  // ▶ 夢航公司補述說明（約 500 字）
   report.innerHTML += `
     <hr class="my-4">
     <p style="line-height:1.8;">
@@ -216,7 +228,3 @@ function renderResult() {
 
   app.appendChild(report);
 }
-
-
-// 初始顯示
-renderIntro();
