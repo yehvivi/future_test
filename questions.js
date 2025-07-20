@@ -2,6 +2,7 @@ const questions = [
 
   {
     number: "Q1",
+    category: "心理穩定性",
     text: `你正專⼼⼯作時，有⼈突然在你⽿邊⼤喊「⽕災了！」但轉頭發現什麼事也沒有。你
 會︖`,
     options: [
@@ -13,6 +14,7 @@ const questions = [
   },
   {
     number: "Q2",
+    category: "心理穩定性",
     text: `半夜夢⾒⾃⼰被困在透明⽔箱裡，醒來後仍喘不過氣。你怎麼處理︖`,
     options: [
       { text: `⾺上上網查是否是⼼理疾病`, score: 2 },
@@ -23,6 +25,7 @@ const questions = [
   },
   {
     number: "Q3",
+    category: "心理穩定性",
     text: `當你講了⼀個笑話，現場⼀⽚寂靜無⼈反應時，你會︖`,
     options: [
       { text: `想⽴刻消失`, score: 2 },
@@ -33,6 +36,7 @@ const questions = [
   },
   {
     number: "Q4",
+    category: "心理穩定性",
     text: `你⾛錯路卻沒發現，結果繞了⼀整圈才回到原點，你會︖`,
     options: [
       { text: `氣急敗壞想怪罪導航`, score: 4 },
@@ -43,6 +47,7 @@ const questions = [
   },
   {
     number: "Q5",
+    category: "心理穩定性",
     text: `你正在演講時，投影機忽然故障，怎麼辦︖`,
     options: [
       { text: `⾺上慌張，覺得⾃⼰丟臉`, score: 2 },
@@ -53,6 +58,7 @@ const questions = [
   },
   {
     number: "Q6",
+    category: "心理穩定性",
     text: `當你在⼀群⼈⾯前摔了⼀跤，你會︖`,
     options: [
       { text: `想⽴刻逃離現場`, score: 1 },
@@ -63,6 +69,7 @@ const questions = [
   },
   {
     number: "Q7",
+    category: "心理穩定性",
     text: `有⼈當眾質疑你能⼒時，你會︖`,
     options: [
       { text: `覺得被否定、委屈難忍`, score: 2 },
@@ -73,6 +80,7 @@ const questions = [
   },
   {
     number: "Q8",
+    category: "心理穩定性",
     text: `當朋友突然消失幾個禮拜、不聯絡你，你會︖`,
     options: [
       { text: `感到極度焦慮與失落`, score: 2 },
@@ -83,6 +91,7 @@ const questions = [
   },
   {
     number: "Q9",
+    category: "心理穩定性",
     text: `有⼈突然邀你參加陌⽣的活動，你會︖`,
     options: [
       { text: `拒絕，因為沒準備`, score: 4 },
@@ -93,6 +102,7 @@ const questions = [
   },
   {
     number: "Q10",
+    category: "心理穩定性",
     text: `⼯作中出現不可控的錯誤，你的第⼀反應是︖`,
     options: [
       { text: `覺得是⾃⼰無能`, score: 3 },
@@ -103,6 +113,7 @@ const questions = [
   },
   {
     number: "Q11",
+    category: "記憶與意識邊界感",
     text: `有天醒來，發現⾃⼰⼿機裡多了幾百段不認得的語⾳備忘錄，每段都是你的聲⾳。你
 會︖`,
     options: [
@@ -114,6 +125,7 @@ const questions = [
   },
   {
     number: "Q12",
+    category: "記憶與意識邊界感",
     text: `你總覺得某本你從未看過的⼩說，是你寫的。你會︖`,
     options: [
       { text: `拼命否認這個荒謬想法`, score: 4 },
@@ -124,6 +136,7 @@ const questions = [
   },
   {
     number: "Q13",
+    category: "記憶與意識邊界感",
     text: `某天你在路上看到⼀個⼩孩叫你「媽媽／爸爸」，語氣篤定，你會︖`,
     options: [
       { text: `嚇壞，⾺上轉身逃⾛`, score: 3 },
@@ -134,6 +147,7 @@ const questions = [
   },
   {
     number: "Q14",
+    category: "記憶與意識邊界感",
     text: `你開始頻繁做同⼀個夢，夢中你有不同的名字與家庭。你會︖`,
     options: [
       { text: `當成夢魘試圖阻⽌`, score: 4 },
@@ -144,6 +158,7 @@ const questions = [
   },
   {
     number: "Q15",
+    category: "記憶與意識邊界感",
     text: `朋友跟你提起⼀段共同回憶，但你完全沒印象。你會︖`,
     options: [
       { text: `拒絕承認那段經歷`, score: 1 },
@@ -154,6 +169,7 @@ const questions = [
   },
   {
     number: "Q16",
+    category: "記憶與意識邊界感",
     text: `你從未學過鋼琴，但某天⼿會⾃動彈奏。你會︖`,
     options: [
       { text: `拒絕彈奏並封存鋼琴`, score: 4 },
@@ -164,6 +180,7 @@ const questions = [
   },
   {
     number: "Q17",
+    category: "記憶與意識邊界感",
     text: `有⼈說你在某個場合做出驚⼈之舉，但你完全不記得，你會︖`,
     options: [
       { text: `否認並要求證據`, score: 2 },
@@ -174,6 +191,7 @@ const questions = [
   },
   {
     number: "Q18",
+    category: "記憶與意識邊界感",
     text: `如果能切換成別⼈的記憶與身體，你希望使⽤期限是︖`,
     options: [
       { text: `不超過⼀⼩時`, score: 2 },
@@ -184,6 +202,7 @@ const questions = [
   },
   {
     number: "Q19",
+    category: "記憶與意識邊界感",
     text: `當你忘記⼀段重要回憶時，你的第⼀反應是︖`,
     options: [
       { text: `恐慌，覺得記憶構成了我`, score: 1 },
@@ -194,6 +213,7 @@ const questions = [
   },
   {
     number: "Q20",
+    category: "記憶與意識邊界感",
     text: `你夢到⾃⼰⽤別⼈的身體在⽣活，醒來後那種感覺非常真實。你會︖`,
     options: [
       { text: `嘗試擺脫這種不適感`, score: 1 },
@@ -204,6 +224,7 @@ const questions = [
   },
   {
     number: "Q21",
+    category: "記憶與意識邊界感",
     text: `有⼈說你和他⼩時候在某個機構⼀起長⼤，但你完全沒這段記憶。你會︖`,
     options: [
       { text: `認為對⽅搞錯了⼈`, score: 2 },
@@ -214,6 +235,7 @@ const questions = [
   },
   {
     number: "Q22",
+    category: "記憶與意識邊界感",
     text: `有時你在照鏡⼦時會覺得「那個⼈」不太像你，這種情況你會︖`,
     options: [
       { text: `避免照鏡⼦`, score: 2 },
@@ -224,6 +246,7 @@ const questions = [
   },
   {
     number: "Q23",
+    category: "記憶與意識邊界感",
     text: `如果某天你發現別⼈也擁有你⼀模⼀樣的記憶與情感，你會︖`,
     options: [
       { text: `把對⽅當成威脅排除掉`, score: 3 },
@@ -234,6 +257,7 @@ const questions = [
   },
   {
     number: "Q24",
+    category: "記憶與意識邊界感",
     text: `你對「我是誰」這件事，最接近哪種理解︖`,
     options: [
       { text: `⼀連串不連續記憶的集合`, score: 2 },
@@ -244,6 +268,7 @@ const questions = [
   },
   {
     number: "Q25",
+    category: "道德彈性與自我認同",
     text: `每次你說謊，路邊的狗就會吐。你會︖`,
     options: [
       { text: `嘗試說出更多謊測試牠們的極限`, score: 1 },
@@ -254,6 +279,7 @@ const questions = [
   },
   {
     number: "Q26",
+    category: "道德彈性與自我認同",
     text: `每當你對某⼈產⽣同情，那⼈會莫名變成你。你會︖`,
     options: [
       { text: `避免對任何⼈產⽣感情`, score: 1 },
@@ -264,6 +290,7 @@ const questions = [
   },
   {
     number: "Q27",
+    category: "道德彈性與自我認同",
     text: `有⼈把你⼗年前的想法寫成⼀本書並出版，你發現全世界都以那本書的內容為道德依
 據。你會︖`,
     options: [
@@ -275,6 +302,7 @@ const questions = [
   },
   {
     number: "Q28",
+    category: "道德彈性與自我認同",
     text: `你在超市看到⼀架空的購物⾞寫著「請偷我」，你會︖`,
     options: [
       { text: `覺得這是陷阱，不理會`, score: 4 },
@@ -285,6 +313,7 @@ const questions = [
   },
   {
     number: "Q29",
+    category: "道德彈性與自我認同",
     text: `你發現你每做⼀次好事，某個陌⽣⼈就遭遇壞運。你會︖`,
     options: [
       { text: `停⽌所有好事⾏為`, score: 1 },
@@ -295,6 +324,7 @@ const questions = [
   },
   {
     number: "Q30",
+    category: "道德彈性與自我認同",
     text: `你正在社群平台上維持⼀個完全與你現實不同的虛構⼈格，且已成為網紅。你會︖`,
     options: [
       { text: `壓⼒太⼤選擇關掉帳號`, score: 1 },
@@ -305,6 +335,7 @@ const questions = [
   },
   {
     number: "Q31",
+    category: "道德彈性與自我認同",
     text: `有⼈請你假扮他，參加他母親的喪禮，你會︖`,
     options: [
       { text: `拒絕，太荒謬`, score: 4 },
@@ -315,6 +346,7 @@ const questions = [
   },
   {
     number: "Q32",
+    category: "道德彈性與自我認同",
     text: `每當你說出「我」這個字，你就會失去⼀個記憶⽚段。你會︖`,
     options: [
       { text: `徹底避免使⽤「我」`, score: 3 },
@@ -325,6 +357,7 @@ const questions = [
   },
   {
     number: "Q33",
+    category: "道德彈性與自我認同",
     text: `你夢⾒⾃⼰正在吃⾃⼰。醒來後發現少了⼀根指甲。你會︖`,
     options: [
       { text: `驚慌檢查全身`, score: 4 },
@@ -335,6 +368,7 @@ const questions = [
   },
   {
     number: "Q34",
+    category: "道德彈性與自我認同",
     text: `你打開錄影檔發現⾃⼰昨天做了⼀件完全不記得的事，還非常投入。你會︖`,
     options: [
       { text: `想辦法查清真相`, score: 4 },
@@ -345,6 +379,7 @@ const questions = [
   },
   {
     number: "Q35",
+    category: "道德彈性與自我認同",
     text: `你開始收到陌⽣⼈寄來的道歉信，稱你是他們的受害者。你會︖`,
     options: [
       { text: `完全否認曾與他們接觸`, score: 1 },
@@ -355,6 +390,7 @@ const questions = [
   },
   {
     number: "Q36",
+    category: "壓力適應力與情緒彈性",
     text: `你在夢裡死去，醒來後感到極度平靜。你會怎麼解讀這種感覺︖`,
     options: [
       { text: `這代表某種⼼靈結束，我應該重新做⼈`, score: 2 },
@@ -365,6 +401,7 @@ const questions = [
   },
   {
     number: "Q37",
+    category: "壓力適應力與情緒彈性",
     text: `當你無法控制情緒時，你會︖`,
     options: [
       { text: `完全封鎖⾃⼰，直到冷靜`, score: 1 },
@@ -375,6 +412,7 @@ const questions = [
   },
   {
     number: "Q38",
+    category: "壓力適應力與情緒彈性",
     text: `當⼀切計劃都泡湯，你⼼中第⼀個念頭是︖`,
     options: [
       { text: `「都是誰害的」`, score: 1 },
@@ -385,6 +423,7 @@ const questions = [
   },
   {
     number: "Q39",
+    category: "壓力適應力與情緒彈性",
     text: `你掉進⼀個不停循環的場景中，你的第⼀反應是︖`,
     options: [
       { text: `想盡辦法逃出去`, score: 4 },
@@ -395,6 +434,7 @@ const questions = [
   },
   {
     number: "Q40",
+    category: "壓力適應力與情緒彈性",
     text: `當你⽬睹⾃⼰最愛的⼈在夢中不斷毀壞你熟悉的事物時，你醒來會︖`,
     options: [
       { text: `無法原諒對⽅，即便那只是夢`, score: 1 },
@@ -405,6 +445,7 @@ const questions = [
   },
   {
     number: "Q41",
+    category: "壓力適應力與情緒彈性",
     text: `被困在⼤霧中，你什麼也看不⾒，只能原地等待。你內⼼︖`,
     options: [
       { text: `焦躁不安，不斷計時`, score: 2 },
@@ -415,6 +456,7 @@ const questions = [
   },
   {
     number: "Q42",
+    category: "壓力適應力與情緒彈性",
     text: `當陌⽣⼈無故攻擊你⼈格，你最可能的反應是︖`,
     options: [
       { text: `⽴刻反擊與辯護`, score: 3 },
@@ -425,6 +467,7 @@ const questions = [
   },
   {
     number: "Q43",
+    category: "壓力適應力與情緒彈性",
     text: `在完全⿊暗中你無法確認⾃⼰是否還存在時，你會︖`,
     options: [
       { text: `呼叫外界尋找證據`, score: 4 },
@@ -435,6 +478,7 @@ const questions = [
   },
   {
     number: "Q44",
+    category: "壓力適應力與情緒彈性",
     text: `當所有⼈都認為你錯了，你卻覺得⾃⼰是對的，你會︖`,
     options: [
       { text: `壓下⾃⼰，接受眾意`, score: 4 },
@@ -445,6 +489,7 @@ const questions = [
   },
   {
     number: "Q45",
+    category: "壓力適應力與情緒彈性",
     text: `你正經歷巨⼤打擊，朋友說：「你會從這學到寶貴的教訓。」你⼼裡︖`,
     options: [
       { text: `覺得對⽅根本不懂我`, score: 3 },
@@ -455,6 +500,7 @@ const questions = [
   },
   {
     number: "Q46",
+    category: "壓力適應力與情緒彈性",
     text: `當你快崩潰時，你最常做什麼︖`,
     options: [
       { text: `找朋友傾訴`, score: 3 },
@@ -465,6 +511,7 @@ const questions = [
   },
   {
     number: "Q47",
+    category: "壓力適應力與情緒彈性",
     text: `⼀個⼈說：「你越痛苦，代表越接近真理。」你會︖`,
     options: [
       { text: `覺得這是虐待⾃⼰的藉⼜`, score: 1 },
@@ -475,6 +522,7 @@ const questions = [
   },
   {
     number: "Q48",
+    category: "壓力適應力與情緒彈性",
     text: `你是否相信所有情緒都是「有⽤的訊號」︖`,
     options: [
       { text: `不可能，有些情緒只會害⼈`, score: 2 },
@@ -485,6 +533,7 @@ const questions = [
   },
   {
     number: "Q49",
+    category: "壓力適應力與情緒彈性",
     text: `⼀件事讓你痛苦了⼗年。現在有⼈說：「你早該放下。」你會︖`,
     options: [
       { text: `憤怒與羞愧交雜`, score: 3 },
@@ -495,6 +544,7 @@ const questions = [
   },
   {
     number: "Q50",
+    category: "壓力適應力與情緒彈性",
     text: `你無法再愛任何⼈，但也無法感到孤單。這種狀態你會︖`,
     options: [
       { text: `覺得⾃⼰有病`, score: 3 },
@@ -505,6 +555,7 @@ const questions = [
   },
   {
     number: "Q51",
+    category: "身份邊界與意識界線穩定度",
     text: `有⼈⽤你名字在網路上發⽂，內容和你無關但沒⼈發現錯誤。你會︖`,
     options: [
       { text: `⾺上澄清並要求刪除`, score: 2 },
@@ -515,6 +566,7 @@ const questions = [
   },
   {
     number: "Q52",
+    category: "身份邊界與意識界線穩定度",
     text: `有⼈叫錯你名字，你懶得糾正。三個⽉後他還是這樣叫，你會︖`,
     options: [
       { text: `正式更正，不能再忍了`, score: 1 },
@@ -525,6 +577,7 @@ const questions = [
   },
   {
     number: "Q53",
+    category: "身份邊界與意識界線穩定度",
     text: `當你在閱讀⼩說時，有時會完全進入角⾊的情緒，你覺得︖`,
     options: [
       { text: `很不喜歡，覺得⼈格被混淆`, score: 3 },
@@ -535,6 +588,7 @@ const questions = [
   },
   {
     number: "Q54",
+    category: "身份邊界與意識界線穩定度",
     text: `你幫別⼈代筆寫信，對⽅說「這就像我⾃⼰寫的」，你會︖`,
     options: [
       { text: `覺得被模糊界線，不舒服`, score: 2 },
@@ -545,6 +599,7 @@ const questions = [
   },
   {
     number: "Q55",
+    category: "身份邊界與意識界線穩定度",
     text: `某天你在街上被陌⽣⼈熱情打招呼，對⽅堅持你們以前⾒過。你會︖`,
     options: [
       { text: `堅定否認並快步離開`, score: 1 },
@@ -555,6 +610,7 @@ const questions = [
   },
   {
     number: "Q56",
+    category: "身份邊界與意識界線穩定度",
     text: `如果你需要長期照顧⼀個失智長輩，他常把你認成他兒⼦。你會︖`,
     options: [
       { text: `每次都糾正他`, score: 1 },
@@ -565,6 +621,7 @@ const questions = [
   },
   {
     number: "Q57",
+    category: "身份邊界與意識界線穩定度",
     text: `當你在社群上創造⼀個分身帳號久了，你覺得︖`,
     options: [
       { text: `這樣太分裂，不健康`, score: 2 },
@@ -575,6 +632,7 @@ const questions = [
   },
   {
     number: "Q58",
+    category: "身份邊界與意識界線穩定度",
     text: `有朋友說你很容易「適應別⼈的情緒」，你怎麼看︖`,
     options: [
       { text: `其實我都很清楚那不是我`, score: 2 },
@@ -585,6 +643,7 @@ const questions = [
   },
   {
     number: "Q59",
+    category: "身份邊界與意識界線穩定度",
     text: `在不同語⾔裡，你的性格會轉變嗎︖`,
     options: [
       { text: `我努⼒讓⾃⼰保持⼀致`, score: 2 },
@@ -595,6 +654,7 @@ const questions = [
   },
   {
     number: "Q60",
+    category: "身份邊界與意識界線穩定度",
     text: `當你在鏡⼦前連續盯著⾃⼰看	10	分鐘，你的感覺是︖`,
     options: [
       { text: `很快分神，覺得無趣`, score: 4 },
@@ -605,6 +665,7 @@ const questions = [
   },
   {
     number: "Q61",
+    category: "身份邊界與意識界線穩定度",
     text: `你是否曾在對話中感到「對⽅說的話其實是我應該說的」︖`,
     options: [
       { text: `從不會這樣感覺`, score: 3 },
@@ -615,6 +676,7 @@ const questions = [
   },
   {
     number: "Q62",
+    category: "身份邊界與意識界線穩定度",
     text: `你願意為了⽣存、徹底換⼀種⼈格⽣活嗎︖`,
     options: [
       { text: `不願意，這樣就不是我了`, score: 1 },
@@ -625,6 +687,7 @@ const questions = [
   },
   {
     number: "Q63",
+    category: "身份邊界與意識界線穩定度",
     text: `如果你發現別⼈使⽤你照⽚假裝是你，還被多⼈認同。你會︖`,
     options: [
       { text: `⾺上反擊並報警`, score: 3 },
@@ -635,6 +698,7 @@ const questions = [
   },
   {
     number: "Q64",
+    category: "身份邊界與意識界線穩定度",
     text: `如果所有⼈都⼀致告訴你：「你不是你」，你會︖`,
     options: [
       { text: `極⼒反駁，保護真實⾃我`, score: 1 },
