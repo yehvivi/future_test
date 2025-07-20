@@ -118,7 +118,7 @@ function recordAnswer(qNum, score) {
 
 // 原本 renderResult 可沿用（未更動分類名稱格式）
 
-renderIntro();
+
 
 
 function renderResult() {
@@ -228,3 +228,136 @@ function renderResult() {
 
   app.appendChild(report);
 }
+
+
+let currentPage = 0;
+let answers = [];
+
+// 分頁題庫（根據題號區間手動定義）
+const pagedQuestions = [
+  {
+    category: "心理穩定性",
+    questions: questions.filter(q => parseInt(q.number.substring(1)) >= 1 && parseInt(q.number.substring(1)) <= 10)
+  },
+  {
+    category: "記憶與意識邊界感",
+    questions: questions.filter(q => parseInt(q.number.substring(1)) >= 11 && parseInt(q.number.substring(1)) <= 24)
+  },
+  {
+    category: "道德彈性與自我認同",
+    questions: questions.filter(q => parseInt(q.number.substring(1)) >= 25 && parseInt(q.number.substring(1)) <= 35)
+  },
+  {
+    category: "壓力適應力與情緒彈性",
+    questions: questions.filter(q => parseInt(q.number.substring(1)) >= 36 && parseInt(q.number.substring(1)) <= 50)
+  },
+  {
+    category: "身份邊界與意識界線穩定度",
+    questions: questions.filter(q => parseInt(q.number.substring(1)) >= 51 && parseInt(q.number.substring(1)) <= 64)
+  }
+];
+
+function renderIntro() {
+  const app = document.getElementById("app");
+  app.innerHTML = `
+    <div class="intro">
+      <h1>🧬 原木載體心理適配檢測說明書</h1>
+      <h3>夢航公司｜意識接入前風險評估模組官方文件</h3>
+      <hr class="my-4">
+
+      <h4>📍簡介</h4>
+      <p>作為夢航公司 RootHost™（原木載體）方案的前置審查流程，本檢測系統由 EULYSIA™ 人格整合模組與 CPEU（Cognitive Pattern Extraction Unit）共同開發，目的在於：</p>
+      <ul>
+        <li>測定申請者意識結構的穩定性；</li>
+        <li>評估其作為「未來人載體」的風險係數；</li>
+        <li>確保不產生神經異常、倫理偏移或身份解離。</li>
+      </ul>
+      <p>此測驗不僅關係到個人風險，也關乎時空節點穩定度與倫理協定的執行。</p>
+
+      <h4>📐測驗結構與核心指標</h4>
+      <p>本測驗共計 <strong>64 題</strong>，分為 五大核心模組，涵蓋如下指標：</p>
+      <ol>
+        <li><strong>心理穩定性：</strong> 測量情緒調節與錯亂風險。</li>
+        <li><strong>記憶與意識邊界感：</strong> 評估記憶清晰度與自我辨識。</li>
+        <li><strong>道德彈性與自我認同：</strong> 檢測角色扮演下的倫理感與身份穩定。</li>
+        <li><strong>壓力適應力與情緒彈性：</strong> 測量極端刺激下的心理反應彈性。</li>
+        <li><strong>身份邊界與意識界線穩定度：</strong> 測定自我認知與多重意識下的核心穩定度。</li>
+      </ol>
+
+      <p style="margin-top: 1.5rem;"><strong>準備好開始測驗了嗎？</strong></p>
+      <button id="startBtn">開始測驗</button>
+    </div>
+  `;
+
+  document.getElementById("startBtn").onclick = () => {
+    currentPage = 0;
+    renderPage();
+  };
+}
+
+function renderPage() {
+  const app = document.getElementById("app");
+  app.innerHTML = "";
+
+  const currentGroup = pagedQuestions[currentPage];
+  const pageQuestions = currentGroup.questions;
+
+  const progress = document.createElement("div");
+  progress.className = "progress";
+  progress.textContent = `目前進度：${currentPage + 1} / ${pagedQuestions.length}`;
+  app.appendChild(progress);
+
+  const title = document.createElement("h3");
+  title.textContent = `模組：${currentGroup.category}`;
+  app.appendChild(title);
+
+  pageQuestions.forEach((q, index) => {
+    const qDiv = document.createElement("div");
+    qDiv.className = "question";
+
+    const qText = document.createElement("p");
+    qText.textContent = `${q.number}｜${q.text}`;
+    qDiv.appendChild(qText);
+
+    const optionsList = document.createElement("ul");
+    optionsList.className = "options";
+
+    q.options.forEach((opt, i) => {
+      const li = document.createElement("li");
+      const radio = document.createElement("input");
+      radio.type = "radio";
+      radio.name = `${q.number}`;
+      radio.value = opt.score;
+      radio.onclick = () => recordAnswer(q.number, opt.score);
+      li.appendChild(radio);
+      li.appendChild(document.createTextNode(" " + opt.text));
+      optionsList.appendChild(li);
+    });
+
+    qDiv.appendChild(optionsList);
+    app.appendChild(qDiv);
+  });
+
+  const nextBtn = document.createElement("button");
+  nextBtn.textContent = currentPage < pagedQuestions.length - 1 ? "下一頁" : "送出結果";
+  nextBtn.onclick = () => {
+    if (currentPage < pagedQuestions.length - 1) {
+      currentPage++;
+      renderPage();
+    } else {
+      renderResult();
+    }
+  };
+  app.appendChild(nextBtn);
+}
+
+function recordAnswer(qNum, score) {
+  const existing = answers.find(a => a.q === qNum);
+  if (existing) {
+    existing.score = score;
+  } else {
+    answers.push({ q: qNum, score });
+  }
+}
+
+renderIntro();
