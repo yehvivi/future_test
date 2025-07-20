@@ -17,11 +17,11 @@ function renderIntro() {
   const app = document.getElementById("app");
   app.innerHTML = `
     <div class="intro">
-      <h1>🧬 原木載體心理適配檢測說明書</h1>
+      <h1>原木載體心理適配檢測說明書</h1>
       <h3>夢航公司｜意識接入前風險評估模組官方文件</h3>
       <hr class="my-4">
 
-      <h4>📍簡介</h4>
+      <h4>簡介</h4>
       <p>作為夢航公司 RootHost™（原木載體）方案的前置審查流程，本檢測系統由 EULYSIA™ 人格整合模組與 CPEU（Cognitive Pattern Extraction Unit）共同開發，目的在於：</p>
       <ul>
         <li>測定申請者意識結構的穩定性；</li>
